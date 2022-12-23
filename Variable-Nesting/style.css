@@ -1,0 +1,37 @@
+div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid red;
+}
+div h1 {
+  color: green;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  margin-bottom: -0.5rem;
+}
+div section {
+  display: flex;
+  text-decoration: none;
+  margin: 1rem;
+}
+div section article {
+  border: 1px solid green;
+  padding: 1rem 0.5rem;
+}
+div section article:nth-child(odd) {
+  color: blue;
+}
+div section article:nth-child(even) {
+  color: red;
+}
+
+/*
+article:nth-child(odd) {
+  color: $blue-color;
+}
+
+article:nth-child(even) {
+  color: $red-color;
+}
+*//*# sourceMappingURL=style.css.map */
