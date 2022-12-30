@@ -1,0 +1,46 @@
+$green-color: green;
+$blue-color: blue;
+$red-color: red;
+
+@mixin card($color, $size, $border-color) {
+  color: $color;
+  font-size: $size;
+  border: 1px solid $border-color;
+}
+
+@mixin bordering($size: 2px, $color) {
+  border: $size solid $color;
+}
+
+div {
+  @include card($green-color, 1rem, $red-color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  h1 {
+    border-bottom: 1px solid $blue-color;
+    margin: 2rem auto 0 auto;
+  }
+  section {
+    display: flex;
+    margin: 1rem;
+    article {
+      @include bordering($green-color);
+      padding: 1rem 0.5rem;
+
+      &:nth-of-type(odd) {
+        color: $blue-color;
+      }
+
+      &:nth-of-type(even) {
+        color: $red-color;
+      }
+    }
+    &:last-child {
+      article {
+        @include card($green-color, 24px, $blue-color);
+      }
+    }
+  }
+}
