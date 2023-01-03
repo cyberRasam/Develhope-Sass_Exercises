@@ -1,0 +1,32 @@
+div {
+  color: green;
+  font-size: 1rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+div h1 {
+  border-bottom: 1px solid blue;
+  margin: 2rem auto 0 auto;
+}
+div section {
+  display: flex;
+  margin: 1rem;
+}
+div section article {
+  border: 2px solid green;
+  padding: 1rem 0.5rem;
+}
+div section article:nth-of-type(odd) {
+  color: blue;
+}
+div section article:nth-of-type(even) {
+  color: red;
+}
+div section:last-child article {
+  color: green;
+  font-size: 24px;
+  border: 1px solid blue;
+}/*# sourceMappingURL=style.css.map */
