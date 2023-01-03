@@ -7,9 +7,13 @@ div {
   text-align: center;
   align-items: center;
 }
-div h1 {
-  border-bottom: 1px solid blue;
+div .heading, div h2 {
+  border-bottom: 0.0625rem solid blue;
   margin: 2rem auto 0 auto;
+}
+div h2 {
+  padding: 1rem;
+  border: 0.0625rem solid red;
 }
 div section {
   display: flex;

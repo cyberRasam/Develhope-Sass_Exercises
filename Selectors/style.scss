@@ -17,9 +17,15 @@ div {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  h1 {
-    border-bottom: 1px solid var.$blue-color;
+  .heading {
+    border-bottom: func.fontSize(1) solid var.$blue-color;
     margin: 2rem auto 0 auto;
+  }
+
+  h2 {
+    @extend .heading;
+    padding: 1rem;
+    border: func.fontSize(1) solid var.$red-color;
   }
   section {
     display: flex;
