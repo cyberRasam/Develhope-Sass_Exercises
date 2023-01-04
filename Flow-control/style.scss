@@ -1,0 +1,89 @@
+@use 'vars.scss' as var;
+@use 'font-gen.scss' as func;
+
+@mixin card($color, $size, $border-color) {
+  color: $color;
+  font-size: $size;
+  border: func.fontSize(1) solid $border-color;
+}
+
+@mixin bordering($color) {
+  border: func.fontSize(2) solid $color;
+}
+
+div {
+  @include card(var.$green-color, 1rem, var.$red-color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  .heading {
+    border-bottom: func.fontSize(1) solid var.$blue-color;
+    margin: 2rem auto 0 auto;
+  }
+
+  h2 {
+    @extend .heading;
+    padding: 1rem;
+    border: func.fontSize(1) solid var.$red-color;
+  }
+  section {
+    display: flex;
+    margin: 1rem;
+    article {
+      @include bordering(var.$green-color);
+      padding: 1rem 0.5rem;
+
+      &:nth-of-type(odd) {
+        color: var.$blue-color;
+      }
+
+      &:nth-of-type(even) {
+        color: var.$red-color;
+      }
+    }
+    &:last-child {
+      article {
+        @include card(var.$green-color, func.fontSize(24), var.$blue-color);
+      }
+    }
+  }
+}
+
+/*Rules for flow control exc */
+
+.boxes {
+  width: 95%;
+  margin: 0;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  text-align: start;
+}
+
+@for $x from 1 through 20 {
+  .box-#{$x} {
+    width: func.fontSize(45);
+    height: func.fontSize(45);
+    display: flex;
+    align-items: flex-start;
+    background-color: darken($color: #fff, $amount: $x * 5%);
+    color: lighten($color: #000000, $amount: $x * 5%);
+    @if $x == 10 {
+      background-color: blue;
+      color: red;
+    }
+  }
+}
+
+@for $counter from 1 to 4 {
+  .fs-#{$counter}rem {
+    @if $counter == 1 {
+      font-size: 1rem;
+    } @else if $counter == 2 {
+      font-size: 2rem;
+    } @else {
+      font-size: 3rem;
+    }
+  }
+}
